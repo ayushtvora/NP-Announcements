@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Settings - NP Announcements</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="../../js/student.js"></script>
+</head>
+<body>
+    <div class="title">
+        <h1>NP Announcements</h1>
+        <h2>Hello, [student]</h2>
+    </div>
+    <div class="tabs">
+        <a href="../clubs/index.html"><i class="material-icons" >sports_basketball</i></a>
+        <a href="../index.html"><i class="material-icons">announcement</i></a>
+        <i class="material-icons">settings_applications</i>
+    </div>
+    <div id="student_settings">
+        <form>
+            <p>Grade:</p>
+            <label>
+                <select id="student grade">
+                    <option name="grade" value="Grade 9">Grade 9
+                    <option name="grade" value="Grade 10">Grade 10
+                    <option name="grade" value="Grade 11">Grade 11
+                    <option name="grade" value="Grade 12">Grade 12
+                </select>
+
+            </label>
+            <p>Gender:</p>
+            <label>
+                <select id="student gender">
+                    <option name="gender" value="Male">Male
+                    <option name="gender" value="Female">Female
+                </select>
+            </label>
+            <p>Clubs</p>
+            <label>
+                <select id="student club">
+                    <option name="club" value="none">None
+                    <option name="club" value="IBT">IBT
+                </select>
+            </label>
+            <button onclick="submitStudentInfo()">Save Changes</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NP Announcements</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="js/signIn.js"></script>
+</head>
+<body>
+    <div class="title">
+        <h1>North Park - Announcements</h1>
+    </div>
+    <div>
+        <form>
+            <p>I am a...</p>
+            <label>
+                <button type="button" onclick="teacherButton()">Teacher</button>
+            </label>
+            <div hidden id="login">
+                <label>
+                    <input id="access" placeholder="Teacher Access Code">
+                    <button type="button" onclick="teacherSignUp()">Submit</button>
+                </label>
+            </div>
+            <label>
+                <button type="button" onclick="studentSignUp()">Student</button>
+            </label>
+        </form>
+    </div>
+</body>
+</html>

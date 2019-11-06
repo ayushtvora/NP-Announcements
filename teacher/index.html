@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher - NP Announcements</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="../js/teacher.js"></script>
+</head>
+<body onload="teacherStartUp()">
+<div class="title">
+    <h1>North Park Announcements</h1>
+    <h2 ondblclick="editName()" id="teacherName">Hello, [double click to edit name]!</h2>
+</div>
+<button onclick="createClub()">New Club</button>
+<div id="create_announcement">
+    <h3>New Announcement</h3>
+    <form>
+        <div id="club_select">
+            Select Club/Grade/Gender
+            <label>
+                <select id="grade">
+                    <option value="All Grades">All Grades</option>
+                    <option value="Grade 9"> Grade 9</option>
+                    <option value="Grade 10">Grade 10</option>
+                    <option value="Grade 11">Grade 11</option>
+                    <option value="Grade 12">Grade 12</option>
+                </select>
+                <select id="gender">
+                    <option value="All Genders">All Genders</option>
+                    <option value="Male">Males</option>
+                    <option value="Female">Females</option>
+                </select>
+                <select id="club">
+                    <option value="North Park Student">North Park Student</option>
+                    <option value="IBT">IBT</option>
+                </select>
+            </label>
+        </div>
+        <div>
+            <label>
+                <input id="announcement" placeholder="Enter announcement here"><br>
+            </label>
+        </div>
+        <div id="submit_button">
+            <label>
+                <button type="button" onclick="postAnnouncement()">Post Announcement</button>
+            </label>
+        </div>
+    </form>
+</div>
+<div>
+    <h3>Your Posted Announcements</h3>
+    <p id="teacher_view"></p>
+</div>
+</body>
+</html>
