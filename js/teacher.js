@@ -34,22 +34,20 @@ function postAnnouncement() {
     document.getElementById("teacher_view").innerHTML = announcementView;
 }
 
+// TODO: Make the club stuff work
 function createClub() {
-    // Ask for name of new club
-    let newClub = prompt("Please enter the name of the New Club"),
-        clubs = document.getElementById("club"),
-        option = document.createElement("option"),
-        clubsList = JSON.parse(localStorage.getItem("clubsList"));
+    let newClub = prompt("Please enter the name of your new club:");
+    let club = document.getElementById("club");
+    let option = document.createElement("option");
+    let clubsList = JSON.parse(localStorage.getItem("clubsList"));
 
-    clubsList.push(newClub);
-    for (let i = 2; i < clubsList.length; i++) {
-        option.text = clubsList[i];
-        clubs.add(option);
+    if (newClub != null) {
+        clubsList.push(newClub);
+        localStorage.setItem("clubsList", JSON.stringify(clubsList));
+        option.text = newClub;
+        option.value = newClub;
+        club.add(option);
     }
-
-    // option.text = newClub;
-    // //option.value = newClub;
-    // clubs.add(option, clubs[2]);
 }
 
 function editName() {
@@ -77,7 +75,32 @@ function teacherStartUp() {
         localStorage.setItem("announcementList", "[]");
         localStorage.setItem("timeList", "[]");
     } if (localStorage.getItem("clubsList") === null) {
-        localStorage.setItem("clubsList", "[North Park Student, IBT]");
+        localStorage.setItem("clubsList", "[]");
+    }
+    // Custom Clubs
+    let x = document.getElementById("club");
+    let option = document.createElement("option");
+    let clubsList = JSON.parse(localStorage.getItem("clubsList"));
+
+    for (let i = 0; i < x.length + 1; i++){
+        x.options[0] = null;
+    }
+    option.text = "North Park Student";
+    option.value = "North Park Student";
+    x.add(option);
+    option = document.createElement("option");
+
+    option.text = "IBT";
+    option.value = "IBT";
+    x.add(option);
+    option = document.createElement("option");
+
+
+    for (let i = 0; i < clubsList.length; i++) {
+        option.text = clubsList[i];
+        option.value = clubsList[i];
+        x.add(option);
+        option = document.createElement("option");
     }
 }
 

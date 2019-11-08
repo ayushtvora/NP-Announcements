@@ -19,12 +19,16 @@ function getAnnouncement() {
             (clubList[iLen] === studentClub || clubList[iLen] === "North Park Student")
         ) {
             announcementView +=
-                timeList[iLen] + " " + "Sent by " + teacherName + " to " + gradeList[iLen] + " " + genderList[iLen] + " in " +
-                clubList[iLen] + ": " + announcementList[iLen] + "<br>";
-
+                timeList[iLen] + " " + "Sent by " + teacherName + " to " + gradeList[iLen] + " " + genderList[iLen]
+                + " in " + clubList[iLen] + ": " + announcementList[iLen] + "<br>";
         }
-        document.getElementById("announcementText").innerHTML = announcementView;
     }
+
+    if (announcementView.length === 0) {
+        announcementView = "You have no new announcements. Please check back later!";
+    }
+    document.getElementById("announcementText").innerHTML = announcementView;
+
 }
 
 function submitStudentInfo() {
