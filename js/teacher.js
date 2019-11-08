@@ -34,7 +34,6 @@ function postAnnouncement() {
     document.getElementById("teacher_view").innerHTML = announcementView;
 }
 
-// TODO: Make the club stuff work
 function createClub() {
     let newClub = prompt("Please enter the name of your new club:");
     let club = document.getElementById("club");
@@ -78,23 +77,22 @@ function teacherStartUp() {
         localStorage.setItem("clubsList", "[]");
     }
     // Custom Clubs
-    let x = document.getElementById("club");
-    let option = document.createElement("option");
-    let clubsList = JSON.parse(localStorage.getItem("clubsList"));
+    let x = document.getElementById("club"),
+        option = document.createElement("option"),
+        clubsList = JSON.parse(localStorage.getItem("clubsList"));
 
     for (let i = 0; i < x.length + 1; i++){
         x.options[0] = null;
     }
+
     option.text = "North Park Student";
     option.value = "North Park Student";
     x.add(option);
     option = document.createElement("option");
-
     option.text = "IBT";
     option.value = "IBT";
     x.add(option);
     option = document.createElement("option");
-
 
     for (let i = 0; i < clubsList.length; i++) {
         option.text = clubsList[i];

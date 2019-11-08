@@ -28,7 +28,6 @@ function getAnnouncement() {
         announcementView = "You have no new announcements. Please check back later!";
     }
     document.getElementById("announcementText").innerHTML = announcementView;
-
 }
 
 function submitStudentInfo() {
@@ -40,4 +39,30 @@ function submitStudentInfo() {
     localStorage.setItem("sGrade", sGrade);
     localStorage.setItem("sGender", sGender);
     localStorage.setItem("sClub", sClub);
+}
+
+function showClubsStudent() {
+    let x = document.getElementById("student club"),
+        option = document.createElement("option"),
+        clubsList = JSON.parse(localStorage.getItem("clubsList"));
+
+    for (let i = 0; i < x.length + 1; i++){
+        x.options[0] = null;
+    }
+
+    option.text = "North Park Student";
+    option.value = "North Park Student";
+    x.add(option);
+    option = document.createElement("option");
+    option.text = "IBT";
+    option.value = "IBT";
+    x.add(option);
+    option = document.createElement("option");
+
+    for (let i = 0; i < clubsList.length; i++) {
+        option.text = clubsList[i];
+        option.value = clubsList[i];
+        x.add(option);
+        option = document.createElement("option");
+    }
 }
