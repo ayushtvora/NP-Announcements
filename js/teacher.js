@@ -5,7 +5,8 @@ function postAnnouncement() {
         clubList = JSON.parse(localStorage.getItem("clubList")),
         announcementList = JSON.parse(localStorage.getItem("announcementList")),
         timeList = JSON.parse(localStorage.getItem("timeList")),
-        announcementView = "", iLen;
+        announcementView = "<table><tr><td>Posted Date</td><td>Grade</td><td>Gender</td><td>Club</td>" +
+            "<td>Announcement</td></tr>", iLen;
     // Add input data to list
     gradeList.push(document.getElementById("grade").value);
     genderList.push(document.getElementById("gender").value);
@@ -28,9 +29,10 @@ function postAnnouncement() {
     for (let i = 1; i < announcementList.length + 1; i++) {
         iLen = announcementList.length - i;
         announcementView +=
-            timeList[iLen] + " " + "Sent to " + gradeList[iLen] + " " + genderList[iLen] +  " in " + clubList[iLen] +
-            ": " + announcementList[iLen] + "<br>";
+            "<tr><td>" + timeList[iLen] + "</td><td>" + gradeList[iLen] + "</td><td>"
+            + genderList[iLen] + "</td><td>" + clubList[iLen] + "</td><td>" + announcementList[iLen] + "</td></tr>";
     }
+    announcementView += "</table>";
     document.getElementById("teacher_view").innerHTML = announcementView;
 }
 

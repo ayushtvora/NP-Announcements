@@ -9,7 +9,8 @@ function getAnnouncement() {
         studentGrade = localStorage.getItem("sGrade"),
         studentGender = localStorage.getItem("sGender"),
         studentClub = localStorage.getItem("sClub"),
-        announcementView = "", iLen;
+        announcementView = "<table><tr><td>Posted Date</td><td>Teacher</td><td>Grade</td><td>Gender</td>" +
+            "<td>Club</td><td>Announcement</td></tr>" , iLen;
 
     for (let i = 1; i < announcementList.length + 1; i++) {
         iLen = announcementList.length - i;
@@ -19,10 +20,11 @@ function getAnnouncement() {
             (clubList[iLen] === studentClub || clubList[iLen] === "North Park Student")
         ) {
             announcementView +=
-                timeList[iLen] + " " + "Sent by " + teacherName + " to " + gradeList[iLen] + " " + genderList[iLen]
-                + " in " + clubList[iLen] + ": " + announcementList[iLen] + "<br>";
+                "<tr><td>" + timeList[iLen] + "</td><td>" + teacherName + "</td><td>" + gradeList[iLen] + "</td><td>"
+                + genderList[iLen] + "</td><td>" + clubList[iLen] + "</td><td>" + announcementList[iLen] + "</td></tr>";
         }
     }
+    announcementView += "</table>";
 
     if (announcementView.length === 0) {
         announcementView = "You have no new announcements. Please check back later!";
