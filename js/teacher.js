@@ -1,47 +1,46 @@
 function postAnnouncement() {
-    //Define lists and for loop requirements
+    // Define variables
     let gradeList = JSON.parse(localStorage.getItem("gradeList")),
         genderList = JSON.parse(localStorage.getItem("genderList")),
         clubList = JSON.parse(localStorage.getItem("clubList")),
         announcementList = JSON.parse(localStorage.getItem("announcementList")),
         timeList = JSON.parse(localStorage.getItem("timeList")),
-        announcementView = "<table><tr><td>Posted Date</td><td>Grade</td><td>Gender</td><td>Club</td>" +
-            "<td>Announcement</td></tr>", iLen;
+        announcementView = "<table><tr><td>Posted Date</td><td>Grade</td><td>Gender</td><td>Club</td><td>Announcement</td></tr>", iLen;
+
     // Add input data to list
     gradeList.push(document.getElementById("grade").value);
     genderList.push(document.getElementById("gender").value);
     clubList.push(document.getElementById("club").value);
     announcementList.push(document.getElementById("announcement").value);
     timeList.push(getTime());
-
     // Re-store to list
     localStorage.setItem("gradeList", JSON.stringify(gradeList));
     localStorage.setItem("genderList", JSON.stringify(genderList));
     localStorage.setItem("clubList", JSON.stringify(clubList));
     localStorage.setItem("announcementList", JSON.stringify(announcementList));
     localStorage.setItem("timeList", JSON.stringify(timeList));
-
-    // Display that it worked
+    // Display confirmation
     alert("Announcement Sent!");
 
+    //TODO: Move to teacherStartUp
 
     // Show announcement in Teacher Announcement Viewer
     for (let i = 1; i < announcementList.length + 1; i++) {
         iLen = announcementList.length - i;
         announcementView +=
-            "<tr><td>" + timeList[iLen] + "</td><td>" + gradeList[iLen] + "</td><td>"
-            + genderList[iLen] + "</td><td>" + clubList[iLen] + "</td><td>" + announcementList[iLen] + "</td></tr>";
+            "<tr><td>" + timeList[iLen] + "</td><td>" + gradeList[iLen] + "</td><td>" + genderList[iLen] + "</td><td>" +  clubList[iLen] + "</td><td>" + announcementList[iLen] + "</td></tr>";
     }
     announcementView += "</table>";
     document.getElementById("teacher_view").innerHTML = announcementView;
 }
 
 function createClub() {
-    let newClub = prompt("Please enter the name of your new club:");
-    let club = document.getElementById("club");
-    let option = document.createElement("option");
-    let clubsList = JSON.parse(localStorage.getItem("clubsList"));
-
+    // Define variables
+    let newClub = prompt("Please enter the name of your new club:"),
+        club = document.getElementById("club"),
+        option = document.createElement("option"),
+        clubsList = JSON.parse(localStorage.getItem("clubsList"));
+    // Create new club
     if (newClub != null) {
         clubsList.push(newClub);
         localStorage.setItem("clubsList", JSON.stringify(clubsList));
@@ -63,11 +62,15 @@ function editName() {
 }
 
 function teacherStartUp() {
-    let loadedName = localStorage.getItem("teacherName");
-    // If a teacher's name has been created before, write the saved name on refresh
-    if (loadedName != null) {
-        document.getElementById("teacherName").innerHTML = "Hello, " + loadedName + "!";
-    }
+    let loadedName = localStorage.getItem("teacherName"),
+        GradeList = JSON.parse(localStorage.getItem("gradeList")),
+        genderList = JSON.parse(localStorage.getItem("genderList")),
+        clubList = JSON.parse(localStorage.getItem("clubList")),
+        announcementList = JSON.parse(localStorage.getItem("announcementList")),
+        timeList = JSON.parse(localStorage.getItem("timeList")),
+        announcementView = "<table><tr><td>Posted Date</td><td>Grade</td><td>Gender</td><td>Club</td><td>Announcement</td></tr>", iLen;
+
+
     // Create lists if not created already
     if (localStorage.getItem("gradeList") === null) {
         localStorage.setItem("gradeList", "[]");
@@ -78,30 +81,35 @@ function teacherStartUp() {
     } if (localStorage.getItem("clubsList") === null) {
         localStorage.setItem("clubsList", "[]");
     }
-    // Custom Clubs
+    // If a teacher's name has been created before, write the saved name on refresh
+    if (loadedName != null) {
+        document.getElementById("teacherName").innerHTML = "Hello, " + loadedName + "!";
+    }
+    // Initialize custom clubs
     let x = document.getElementById("club"),
         option = document.createElement("option"),
         clubsList = JSON.parse(localStorage.getItem("clubsList"));
-
     for (let i = 0; i < x.length + 1; i++){
         x.options[0] = null;
     }
-
-    option.text = "North Park Student";
-    option.value = "North Park Student";
-    x.add(option);
+    option.text = "North Park Student"; option.value = "North Park Student"; x.add(option);
     option = document.createElement("option");
-    option.text = "IBT";
-    option.value = "IBT";
-    x.add(option);
+    option.text = "IBT"; option.value = "IBT"; x.add(option);
     option = document.createElement("option");
-
     for (let i = 0; i < clubsList.length; i++) {
         option.text = clubsList[i];
         option.value = clubsList[i];
         x.add(option);
         option = document.createElement("option");
     }
+    // Show announcements in Teacher page
+            for (let i = 1; i < announcementList.length + 1; i++) {
+        iLen = announcementList.length - i;
+        announcementView +=
+            "<tr><td>" + timeList[iLen] + "</td><td>" + gradeList[iLen] + "</td><td>" + genderList[iLen] + "</td><td>" +  clubList[iLen] + "</td><td>" + announcementList[iLen] + "</td></tr>";
+    }
+    announcementView += "</table>";
+    document.getElementById("teacher_view").innerHTML = announcementView;
 }
 
 function getTime() {
