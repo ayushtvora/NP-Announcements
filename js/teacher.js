@@ -10,7 +10,8 @@ function postAnnouncement() {
         clubList = JSON.parse(localStorage.getItem("clubList")),
         announcementList = JSON.parse(localStorage.getItem("announcementList")),
         timeList = JSON.parse(localStorage.getItem("timeList")),
-        announcementView = "<table><tr><td>Posted Date</td><td>Grade</td><td>Gender</td><td>Club</td><td>Announcement</td></tr>", iLen;
+        announcementView = "<table><tr><th>Posted Date</th><th>Grade</th><th>Gender</th><th>Club</th><th>Announcement</th></tr>",
+        iLen;
 
     // Add input data to list
     gradeList.push(document.getElementById("grade").value);
@@ -26,8 +27,6 @@ function postAnnouncement() {
     localStorage.setItem("timeList", JSON.stringify(timeList));
     // Display confirmation
     alert("Announcement Sent!");
-
-    //TODO: Move to teacherStartUp
 
     // Show announcement in Teacher Announcement Viewer
     for (let i = 1; i < announcementList.length + 1; i++) {
@@ -73,7 +72,8 @@ function teacherStartUp() {
         clubList = JSON.parse(localStorage.getItem("clubList")),
         announcementList = JSON.parse(localStorage.getItem("announcementList")),
         timeList = JSON.parse(localStorage.getItem("timeList")),
-        announcementView = "<table><tr><td>Posted Date</td><td>Grade</td><td>Gender</td><td>Club</td><td>Announcement</td></tr>", iLen;
+        announcementView = "<table><tr><th>Posted Date</th><th>Grade</th><th>Gender</th><th>Club</th><th>Announcement</th></tr>",
+        iLen;
 
 
     // Create lists if not created already

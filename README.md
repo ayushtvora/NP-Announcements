@@ -9,7 +9,7 @@ Version: 1.0.0
 Date: __ November, 2019
 
 ## About the Program
-This is a school announcement application.The purpose is for teachers to create an announcement that students can view.
+This is a school announcement application. The purpose is for teachers to create an announcement that students can view.
 
 ### How to Use the Program
 #### Teachers:

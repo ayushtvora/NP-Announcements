@@ -10,62 +10,55 @@
     <title>Teacher - NP Announcements</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap" rel="stylesheet">
-    <script src="../js/teacher.js"></script>
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/teacher.js"></script>
 </head>
 <body onload="teacherStartUp()">
-<div class="title">
-    <h1>North Park Announcements</h1>
-    <h2 ondblclick="editName()" id="teacherName">Hello, [double click to edit name]!</h2>
-</div>
-<button onclick="createClub()">New Club</button>
-<div id="create_announcement">
-    <h3>New Announcement</h3>
-    <form>
-        <div id="club_select">
-            Select who to send it to: <br>
-            <div class="submit-form">
-                <label for="grade">Grade</label>
-                <select id="grade">
-                    <option value="All Grades">All Grades</option>
-                    <option value="Grade 9"> Grade 9</option>
-                    <option value="Grade 10">Grade 10</option>
-                    <option value="Grade 11">Grade 11</option>
-                    <option value="Grade 12">Grade 12</option>
-                </select>
-            </div>
-            <br>
-            <div class="submit-form">
-                <label for="gender">Gender</label>
-                <select id="gender">
-                    <option value="All Genders">All Genders</option>
-                    <option value="Male">Males</option>
-                    <option value="Female">Females</option>
-                </select>
-            </div>
-            <br>
-            <div class="submit-form">
-                <label for="club">Club</label>
-                <select id="club">
-                    <option value="North Park Student">North Park Student</option>
-                    <option value="IBT">IBT</option>
-                </select>
-            </div>
-        </div>
-        <div>
-            <label for="announcement">Announcement:<br></label>
-            <textarea id="announcement" placeholder="Enter announcement here"></textarea><br>
-        </div>
-        <div id="submit_button">
-            <label>
+    <div class="title">
+        <h1>North Park Announcements</h1>
+        <h2 ondblclick="editName()" id="teacherName">Hello, [double click to edit name]!</h2>
+        <h1 class="fixedstuff">hello</h1>
+    </div>
+    <div class="row">
+        <div class="column" id="column1">
+            <button onclick="createClub()">New Club</button>
+            <h3>New Announcement</h3>
+            <form>
+                Select who to send it to: <br><br>
+                <div class="dropdown">
+                    <label for="grade">Grade: </label>
+                    <select id="grade">
+                        <option value="All Grades">All Grades</option>
+                        <option value="Grade 9"> Grade 9</option>
+                        <option value="Grade 10">Grade 10</option>
+                        <option value="Grade 11">Grade 11</option>
+                        <option value="Grade 12">Grade 12</option>
+                    </select><br>
+                </div>
+                <div class="dropdown">
+                    <label for="gender">Gender: </label>
+                    <select id="gender">
+                        <option value="All Genders">All Genders</option>
+                        <option value="Male">Males</option>
+                        <option value="Female">Females</option>
+                    </select><br>
+                </div>
+                <div class="dropdown">
+                    <label for="club">Club: </label>
+                    <select id="club">
+                        <option value="North Park Student">North Park Student</option>
+                        <option value="IBT">IBT</option>
+                    </select><br>
+                </div>
+                <label for="announcement">Announcement: <br></label>
+                <textarea id="announcement" placeholder="Enter announcement here"></textarea><br>
                 <button type="button" onclick="postAnnouncement()">Post Announcement</button>
-            </label>
+            </form>
         </div>
-    </form>
-</div>
-<div>
-    <h3>Your Posted Announcements</h3>
-    <p id="teacher_view"></p>
-</div>
+        <div class="column" id="column2">
+            <h3>Your Posted Announcements</h3>
+            <p id="teacher_view"></p>
+        </div>
+    </div>
 </body>
 </html>
