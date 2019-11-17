@@ -1,3 +1,8 @@
+// Name: Ayush Vora
+// Course: ICS3U
+// Version: 1.0.0
+// Date: __ November, 2019
+
 function postAnnouncement() {
     // Define variables
     let gradeList = JSON.parse(localStorage.getItem("gradeList")),
@@ -63,7 +68,7 @@ function editName() {
 
 function teacherStartUp() {
     let loadedName = localStorage.getItem("teacherName"),
-        GradeList = JSON.parse(localStorage.getItem("gradeList")),
+        gradeList = JSON.parse(localStorage.getItem("gradeList")),
         genderList = JSON.parse(localStorage.getItem("genderList")),
         clubList = JSON.parse(localStorage.getItem("clubList")),
         announcementList = JSON.parse(localStorage.getItem("announcementList")),
@@ -103,7 +108,7 @@ function teacherStartUp() {
         option = document.createElement("option");
     }
     // Show announcements in Teacher page
-            for (let i = 1; i < announcementList.length + 1; i++) {
+    for (let i = 1; i < announcementList.length + 1; i++) {
         iLen = announcementList.length - i;
         announcementView +=
             "<tr><td>" + timeList[iLen] + "</td><td>" + gradeList[iLen] + "</td><td>" + genderList[iLen] + "</td><td>" +  clubList[iLen] + "</td><td>" + announcementList[iLen] + "</td></tr>";

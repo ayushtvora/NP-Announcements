@@ -1,3 +1,8 @@
+// Name: Ayush Vora
+// Course: ICS3U
+// Version: 1.0.0
+// Date: __ November, 2019
+
 function teacherButton() {
     let login = document.getElementById("login");
     login.removeAttribute("hidden");

@@ -1,6 +1,12 @@
+// Name: Ayush Vora
+// Course: ICS3U
+// Version: 1.0.0
+// Date: __ November, 2019
+
 function getAnnouncement() {
     // Get item stored into variables
     let teacherName = localStorage.getItem("teacherName"),
+        teacherEmail = localStorage.getItem("teacherEmail"),
         gradeList = JSON.parse(localStorage.getItem("gradeList")),
         genderList = JSON.parse(localStorage.getItem("genderList")),
         clubList = JSON.parse(localStorage.getItem("clubList")),
@@ -10,7 +16,9 @@ function getAnnouncement() {
         studentGender = localStorage.getItem("sGender"),
         studentClub = localStorage.getItem("sClub"),
         announcementView = "<table><tr><td>Posted Date</td><td>Teacher</td><td>Grade</td><td>Gender</td>" +
-            "<td>Club</td><td>Announcement</td></tr>" , iLen;
+            "<td>Club</td><td>Announcement</td></tr>", iLen;
+
+
 
     for (let i = 1; i < announcementList.length + 1; i++) {
         iLen = announcementList.length - i;
@@ -19,16 +27,14 @@ function getAnnouncement() {
             (genderList[iLen] === studentGender || genderList[iLen] === "All Genders") &&
             (clubList[iLen] === studentClub || clubList[iLen] === "North Park Student")
         ) {
+
+
             announcementView +=
                 "<tr><td>" + timeList[iLen] + "</td><td>" + teacherName + "</td><td>" + gradeList[iLen] + "</td><td>"
                 + genderList[iLen] + "</td><td>" + clubList[iLen] + "</td><td>" + announcementList[iLen] + "</td></tr>";
         }
     }
     announcementView += "</table>";
-
-    if (announcementView.length === 0) {
-        announcementView = "You have no new announcements. Please check back later!";
-    }
     document.getElementById("announcementText").innerHTML = announcementView;
 }
 
