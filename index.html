@@ -8,28 +8,31 @@
 <head>
     <meta charset="UTF-8">
     <title>NP Announcements</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Public+Sans&display=swap" rel="stylesheet">
     <script src="js/signIn.js"></script>
+    <link rel="shortcut icon" type="image/png" href="./assets/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="title">
-        <h1>North Park - Announcements</h1>
-    </div>
-    <div>
+    <h1>North Park Announcements</h1>
+    <h2> I am a...</h2>
+    <div class="centered_buttons">
         <form>
-            <p>I am a...</p>
-            <label>
-                <button type="button" onclick="teacherButton()">Teacher</button>
-            </label>
-            <div hidden id="login">
-                <label>
-                    <input id="access" placeholder="Teacher Access Code">
-                    <button onclick="teacherSignUp()">Submit</button>
-                </label>
+            <div class="row">
+                <div class="column">
+                    <button type="button" onclick="teacherButton()">Teacher</button>
+                    <div hidden id="login">
+                        <br>
+                        <label for="access">Enter the Teacher Access Code:</label>
+                        <input id="access" placeholder="Access Code">
+                        <br>
+                        <button onclick="teacherSignUp()">Submit</button>
+                    </div>
+                </div>
+                <div class="column">
+                    <button type="button" onclick="studentSignUp()">Student</button>
+                </div>
             </div>
-            <label>
-                <button type="button" onclick="studentSignUp()">Student</button>
-            </label>
         </form>
     </div>
 </body>

@@ -1,6 +1,6 @@
 <!--Name: Ayush Vora-->
 <!--Course: ICS3U-->
-<!--Version: 1.0.0-->
+<!--Version: 1.0-->
 <!--Date: __ November, 2019-->
 
 <!DOCTYPE html>
@@ -9,7 +9,10 @@
     <meta charset="UTF-8">
     <title>Student - NP Announcements</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Public+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
     <script src="../js/student.js"></script>
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
 </head>
 <body onload="getAnnouncement()">
     <div class="title">
@@ -17,18 +20,13 @@
         <h2>Hello, [student]</h2>
     </div>
     <div class="tabs">
-        <a href="clubs/index.html"><i class="material-icons" >sports_basketball</i></a>
-        <i class="material-icons">announcement</i>
-        <a href="profile/index.html"><i class="material-icons">settings_applications</i></a>
+        <i class="material-icons md-48 current">announcement</i>
+        <a href="profile/index.html"><i class="material-icons md-48">settings_applications</i></a>
     </div>
     <div id="student_announcements">
         <div class="student_announcement">
             <p id="announcementText">You have no new announcements. Please check back later!</p>
-            <a href="mailto:someone@example.com?"><i class="material-icons">email</i></a>
         </div>
-    </div>
-    <div id="TEMP">
-
     </div>
 </body>
 </html>

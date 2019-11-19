@@ -6,7 +6,6 @@
 function getAnnouncement() {
     // Get item stored into variables
     let teacherName = localStorage.getItem("teacherName"),
-        teacherEmail = localStorage.getItem("teacherEmail"),
         gradeList = JSON.parse(localStorage.getItem("gradeList")),
         genderList = JSON.parse(localStorage.getItem("genderList")),
         clubList = JSON.parse(localStorage.getItem("clubList")),
@@ -15,10 +14,9 @@ function getAnnouncement() {
         studentGrade = localStorage.getItem("sGrade"),
         studentGender = localStorage.getItem("sGender"),
         studentClub = localStorage.getItem("sClub"),
-        announcementView = "<table><tr><td>Posted Date</td><td>Teacher</td><td>Grade</td><td>Gender</td>" +
-            "<td>Club</td><td>Announcement</td></tr>", iLen;
-
-
+        announcementView = "<table><tr><th>Posted Date</th><th>Teacher</th><th>Grade</th><th>Gender</th>" +
+            "<th>Club</th><th>Announcement</th></tr>",
+        iLen;
 
     for (let i = 1; i < announcementList.length + 1; i++) {
         iLen = announcementList.length - i;
@@ -27,8 +25,6 @@ function getAnnouncement() {
             (genderList[iLen] === studentGender || genderList[iLen] === "All Genders") &&
             (clubList[iLen] === studentClub || clubList[iLen] === "North Park Student")
         ) {
-
-
             announcementView +=
                 "<tr><td>" + timeList[iLen] + "</td><td>" + teacherName + "</td><td>" + gradeList[iLen] + "</td><td>"
                 + genderList[iLen] + "</td><td>" + clubList[iLen] + "</td><td>" + announcementList[iLen] + "</td></tr>";

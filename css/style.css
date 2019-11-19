@@ -14,16 +14,14 @@ body {
     background-color: #011C40 ;
 }
 
-
-
 h1, h2 {
     color: #F27B13;
     text-align: center;
-    font-family: "Open Sans", Arial, sans-serif;
+    font-family: "Public Sans", Arial, sans-serif;
 }
 h3 {
     color: #F2EFC4;
-    font-family: "Open Sans", Arial, sans-serif;
+    font-family: "Public Sans", Arial, sans-serif;
 }
 
 
@@ -36,17 +34,27 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    font-family: "Roboto Light", Arial, sans-serif;
+    font-family: "Lato", Arial, sans-serif;
 }
 
 form {
     color: #F2EFC4;
-    font-family: "Roboto Light", Arial, sans-serif;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 24px;
+}
+
+.centered_buttons {
+    text-align: center;
 }
 
 .dropdown {
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+.dropdown.student {
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
 textarea {
@@ -58,6 +66,11 @@ textarea {
     display: flex;
 }
 
+.column {
+    padding: 10px;
+    flex: 50%;
+}
+
 #column1 {
     flex: 30%;
 }
@@ -66,14 +79,12 @@ textarea {
     flex: 70%;
 }
 
-.column {
-    padding: 10px;
-}
+
 
 th, td {
     border-bottom: 1px solid #F2EFC4;
     color: #F2EFC4;
-    font-family: "Roboto Light", Arial, sans-serif;
+    font-family: "Lato", Arial, sans-serif;
     padding: 10px;
 }
 
@@ -84,4 +95,19 @@ th {
 
 td {
     color: #F2EFC4;
+}
+
+.tabs {
+    text-align: center;
+}
+
+.material-icons.md-48 {
+    color: #A60303;
+    font-size: 48px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.material-icons.md-48.current {
+    color: #175073;
 }

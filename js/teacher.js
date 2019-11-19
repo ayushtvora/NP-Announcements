@@ -10,7 +10,8 @@ function postAnnouncement() {
         clubList = JSON.parse(localStorage.getItem("clubList")),
         announcementList = JSON.parse(localStorage.getItem("announcementList")),
         timeList = JSON.parse(localStorage.getItem("timeList")),
-        announcementView = "<table><tr><th>Posted Date</th><th>Grade</th><th>Gender</th><th>Club</th><th>Announcement</th></tr>",
+        announcementView = "<table><tr><th>Posted Date</th><th>Grade</th><th>Gender</th><th>Club</th>" +
+            "<th>Announcement</th></tr>",
         iLen;
 
     // Add input data to list

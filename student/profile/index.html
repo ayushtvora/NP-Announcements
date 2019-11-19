@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Student Settings - NP Announcements</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato|Public+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../../css/style.css">
     <script src="../../js/student.js"></script>
+    <link rel="shortcut icon" type="image/png" href="../../assets/favicon.png">
 </head>
 <body onload="showClubsStudent()">
     <div class="title">
@@ -12,37 +15,35 @@
         <h2>Hello, [student]</h2>
     </div>
     <div class="tabs">
-        <a href="../clubs/index.html"><i class="material-icons" >sports_basketball</i></a>
-        <a href="../index.html"><i class="material-icons">announcement</i></a>
-        <i class="material-icons">settings_applications</i>
+        <a href="../index.html"><i class="material-icons md-48">announcement</i></a>
+        <i class="material-icons md-48 current">settings_applications</i>
     </div>
-    <div id="student_settings">
+    <div id="student_settings" class="centered_buttons">
         <form>
-            <p>Grade:</p>
-            <label>
+            <div class="dropdown student">
+                <label for="student grade">Grade: </label>
                 <select id="student grade">
                     <option name="grade" value="Grade 9">Grade 9
                     <option name="grade" value="Grade 10">Grade 10
                     <option name="grade" value="Grade 11">Grade 11
                     <option name="grade" value="Grade 12">Grade 12
-                </select>
-
-            </label>
-            <p>Gender:</p>
-            <label>
+                </select><br>
+            </div>
+            <div class="dropdown student">
+                <label for="student gender">Gender: </label>
                 <select id="student gender">
                     <option name="gender" value="Male">Male
                     <option name="gender" value="Female">Female
-                </select>
-            </label>
-            <p>Clubs</p>
-            <label>
+                </select><br>
+            </div>
+            <div class="dropdown student">
+                <label for="student club">Clubs: </label>
                 <select id="student club">
                     <option name="club" value="none">None
                     <option name="club" value="IBT">IBT
-                </select>
-            </label>
-            <button onclick="submitStudentInfo()">Save Changes</button>
+                </select><br>
+            </div>
+            <button onclick="submitStudentInfo()">Submit</button>
         </form>
     </div>
 </body>
