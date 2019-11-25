@@ -1,8 +1,9 @@
 // Name: Ayush Vora
 // Course: ICS3U
 // Version: 1.0.0
-// Date: __ November, 2019
+// Date: 21 November, 2019
 
+// How the teacher pushes the announcement
 function postAnnouncement() {
     // Define variables
     let gradeList = JSON.parse(localStorage.getItem("gradeList")),
@@ -20,12 +21,14 @@ function postAnnouncement() {
     clubList.push(document.getElementById("club").value);
     announcementList.push(document.getElementById("announcement").value);
     timeList.push(getTime());
+
     // Re-store to list
     localStorage.setItem("gradeList", JSON.stringify(gradeList));
     localStorage.setItem("genderList", JSON.stringify(genderList));
     localStorage.setItem("clubList", JSON.stringify(clubList));
     localStorage.setItem("announcementList", JSON.stringify(announcementList));
     localStorage.setItem("timeList", JSON.stringify(timeList));
+
     // Display confirmation
     alert("Announcement Sent!");
 
@@ -67,6 +70,7 @@ function editName() {
 }
 
 function teacherStartUp() {
+    // Define variables
     let loadedName = localStorage.getItem("teacherName"),
         gradeList = JSON.parse(localStorage.getItem("gradeList")),
         genderList = JSON.parse(localStorage.getItem("genderList")),
@@ -98,21 +102,26 @@ function teacherStartUp() {
     for (let i = 0; i < x.length + 1; i++){
         x.options[0] = null;
     }
+
+    // Add North Park Student and IBT automatically.
     option.text = "North Park Student"; option.value = "North Park Student"; x.add(option);
     option = document.createElement("option");
     option.text = "IBT"; option.value = "IBT"; x.add(option);
     option = document.createElement("option");
+    // Also add the custom clubs as well
     for (let i = 0; i < clubsList.length; i++) {
         option.text = clubsList[i];
         option.value = clubsList[i];
         x.add(option);
         option = document.createElement("option");
     }
+
     // Show announcements in Teacher page
     for (let i = 1; i < announcementList.length + 1; i++) {
         iLen = announcementList.length - i;
         announcementView +=
-            "<tr><td>" + timeList[iLen] + "</td><td>" + gradeList[iLen] + "</td><td>" + genderList[iLen] + "</td><td>" +  clubList[iLen] + "</td><td>" + announcementList[iLen] + "</td></tr>";
+            "<tr><td>" + timeList[iLen] + "</td><td>" + gradeList[iLen] + "</td><td>" + genderList[iLen] +
+            "</td><td>" +  clubList[iLen] + "</td><td>" + announcementList[iLen] + "</td></tr>";
     }
     announcementView += "</table>";
     document.getElementById("teacher_view").innerHTML = announcementView;

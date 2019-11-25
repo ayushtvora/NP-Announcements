@@ -1,8 +1,9 @@
 // Name: Ayush Vora
 // Course: ICS3U
 // Version: 1.0.0
-// Date: __ November, 2019
+// Date: 21 November, 2019
 
+// Allow the student to see the announcement
 function getAnnouncement() {
     // Get item stored into variables
     let teacherName = localStorage.getItem("teacherName"),
@@ -18,6 +19,7 @@ function getAnnouncement() {
             "<th>Club</th><th>Announcement</th></tr>",
         iLen;
 
+    // If the student has the same identification as the announcement...
     for (let i = 1; i < announcementList.length + 1; i++) {
         iLen = announcementList.length - i;
         if (
@@ -25,6 +27,7 @@ function getAnnouncement() {
             (genderList[iLen] === studentGender || genderList[iLen] === "All Genders") &&
             (clubList[iLen] === studentClub || clubList[iLen] === "North Park Student")
         ) {
+            // Show the announcement
             announcementView +=
                 "<tr><td>" + timeList[iLen] + "</td><td>" + teacherName + "</td><td>" + gradeList[iLen] + "</td><td>"
                 + genderList[iLen] + "</td><td>" + clubList[iLen] + "</td><td>" + announcementList[iLen] + "</td></tr>";
@@ -54,6 +57,7 @@ function showClubsStudent() {
         x.options[0] = null;
     }
 
+    // Automatically show North Park Student and IBT
     option.text = "North Park Student";
     option.value = "North Park Student";
     x.add(option);
@@ -63,6 +67,7 @@ function showClubsStudent() {
     x.add(option);
     option = document.createElement("option");
 
+    // Add custom clubs as well.
     for (let i = 0; i < clubsList.length; i++) {
         option.text = clubsList[i];
         option.value = clubsList[i];
